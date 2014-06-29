@@ -1,0 +1,6 @@
+name: Sajin M Prasad
+description: ''
+url: http://sajinmp.github.io
+pygments: true
+permalink: /posts/:title
+markdown: kramdown
