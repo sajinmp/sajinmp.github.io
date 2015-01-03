@@ -12,6 +12,6 @@ Today I tried to open google-chrome using the 'Run applications' dialogue. What 
 
 I tried it in the Run application box. It displayed the familiar error "Command not found". To rectify that I just ran the following command.
 
-> # ln -s google-chrome /usr/bin/google
+> \# ln -s google-chrome /usr/bin/google
 
 It adds the link 'google' to google-chrome which can be accessed on the Run applications dialogue as well.
