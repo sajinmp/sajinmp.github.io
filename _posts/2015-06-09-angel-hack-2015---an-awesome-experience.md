@@ -14,6 +14,6 @@ Unfortunately an accident occured just before the demo. I just reset the databas
 
 If I forget the matter of not being able to show the demo, then I had a lot of fun and did lot of coding. I also got introduced into android by my friend. I look forward to participating in another hackathon.
 
-The application developed can be found on [Github](https://github.com/sajinmp/opinia).
+The application developed can be found on [Github](https://github.com/sajinmp/opinia). A demo is hosted in [Heroku](http://opinia.herokuapp.com).
 
 
