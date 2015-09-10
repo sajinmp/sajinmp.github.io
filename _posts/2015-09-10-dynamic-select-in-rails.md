@@ -35,8 +35,10 @@ These will create the models and the controller and views for article. Now we go
       <%= f.label :content %>
       <%= f.text_area :content %>
       
-      <%= f.collection_select(:category_id, Category.all, :id, :name, { prompt: 'Select a category' }, { id: 'category-select' }) %>
-      <%= f.grouped_collection_select :subcategory_id, Category.all, :subcategories, :name, :id, :name, { include_blank: 'Select a sub category' }, { id: 'subcategory-select' } %>
+      <%= f.collection_select(:category_id, Category.all, :id, :name, 
+        { prompt: 'Select a category' }, { id: 'category-select' }) %>
+      <%= f.grouped_collection_select :subcategory_id, Category.all, :subcategories, 
+        :name, :id, :name, { include_blank: 'Select a sub category' }, { id: 'subcategory-select' } %>
       
       <%= f.submit 'Save' %>
     <% end %>
