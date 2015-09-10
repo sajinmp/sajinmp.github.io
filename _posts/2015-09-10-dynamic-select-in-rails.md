@@ -13,7 +13,7 @@ This will create a new application. Lets setup dynamic select boxes for categori
 
     dynamic_boxes]$ rails g model Category name
     dynamic_boxes]$ rails g model Subcategory name
-    dynamic_boxes]$ rails g scaffold Article name content:text category\_id:integer subcategory\_id:integer
+    dynamic_boxes]$ rails g scaffold Article name content:text category_id:integer subcategory_id:integer
     
 ### app/model/category.rb
 
@@ -36,8 +36,8 @@ These will create the models and the controller and views for article. Now we go
   <%= f.label :content %>
   <%= f.text_area :content %>
   
-  <%= f.collection_select(:category\_id, Category.all, :id, :name, { prompt: 'Select a category' }, { id: 'category-select' }) %>
-  <%= f.grouped_collection\_select :subcategory\_id, Category.all, :subcategories, :name, :id, :name, { include\_blank: 'Select a sub category' }, { id: 'subcategory-select' } %>
+  <%= f.collection_select(:category_id, Category.all, :id, :name, { prompt: 'Select a category' }, { id: 'category-select' }) %>
+  <%= f.grouped_collection_select :subcategory_id, Category.all, :subcategories, :name, :id, :name, { include_blank: 'Select a sub category' }, { id: 'subcategory-select' } %>
   
   <%= f.submit 'Save' %>
 <% end %>
