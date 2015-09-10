@@ -27,37 +27,35 @@ These will create the models and the controller and views for article. Now we go
 
 ### app/view/articles/_form.html.erb
 
----
-<%= form_for @article do |f| %>
-
-  <%= f.label :name %> 
-  <%= f.text_field :name %> 
-  
-  <%= f.label :content %>
-  <%= f.text_area :content %>
-  
-  <%= f.collection_select(:category_id, Category.all, :id, :name, { prompt: 'Select a category' }, { id: 'category-select' }) %>
-  <%= f.grouped_collection_select :subcategory_id, Category.all, :subcategories, :name, :id, :name, { include_blank: 'Select a sub category' }, { id: 'subcategory-select' } %>
-  
-  <%= f.submit 'Save' %>
-<% end %>
----
+    <%= form_for @article do |f| %>
+    
+      <%= f.label :name %> 
+      <%= f.text_field :name %> 
+      
+      <%= f.label :content %>
+      <%= f.text_area :content %>
+      
+      <%= f.collection_select(:category_id, Category.all, :id, :name, { prompt: 'Select a category' }, { id: 'category-select' }) %>
+      <%= f.grouped_collection_select :subcategory_id, Category.all, :subcategories, :name, :id, :name, { include_blank: 'Select a sub category' }, { id: 'subcategory-select' } %>
+      
+      <%= f.submit 'Save' %>
+    <% end %>
 
 Now seed some data. Then in the new articles page we can find that the dropdown of subcategories is filtered by its respective categories. Now we can write some **coffeescript** to filter the subcategory options according to the selected category.
 
 ### app/assets/javascripts/articles.js.coffee
 
----
-jQuery ->
-  subcat = $('#subcategory-select').html()
-  $('#category-select').change ->
-    cat = jQuery('#category-select').children('option').filter(':selected').text()
-    options = $(subcat).filter("optgroup[label='#{cat}']").html()
-    if options
-      $('#subcategory-select').html(options)
-    else
-      $('#subcategory-select').empty()
----
+
+    jQuery ->
+      subcat = $('#subcategory-select').html()
+      $('#category-select').change ->
+        cat = jQuery('#category-select').children('option').filter(':selected').text()
+        options = $(subcat).filter("optgroup[label='#{cat}']").html()
+        if options
+          $('#subcategory-select').html(options)
+        else
+          $('#subcategory-select').empty()
+
 
 And thats it. Now if you try to select a category, the subcategories will get filtered automatically.
 
