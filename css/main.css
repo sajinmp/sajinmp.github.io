@@ -176,3 +176,11 @@ hr {
 .myimage {
   padding-left: 15px;
 }
+
+pre  {
+  background: #d3d3d3;
+}
+
+code  {
+  background: #d3d3d3;
+}

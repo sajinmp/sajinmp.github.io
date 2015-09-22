@@ -48,7 +48,7 @@ Since you have setup the secrets and all, move on to create an initializer for c
     end
     
 That concludes the settings for Carrierwave. Now you just have to go to the `Uploader` and change the `storage`.
-
+    
     # app/uploaders/example_uploader.rb
     
     # storage :file       Comment it out
