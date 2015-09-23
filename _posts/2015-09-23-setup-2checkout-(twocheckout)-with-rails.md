@@ -65,7 +65,7 @@ Then in the view we just have to call **html_safe** on the form.
     
 In confirm page you will see a Checkout button. If you want to change the style of twocheckout button  you will have to add a class using JS to that element. I am not going to explain that.
 
-Now we have a button that will be redirected to Twocheckout payment page. If you want to setup inline twocheckout payment (twocheckout as an overlay) you will have to copy paste a JS from [here](). You will also have to populate all the fields including **address, card_holder_name and so on** in the `params`.
+Now we have a button that will be redirected to Twocheckout payment page. If you want to setup inline twocheckout payment (twocheckout as an overlay) you will have to copy paste a JS from [here](https://www.2checkout.com/static/checkout/javascript/direct.min.js). You will also have to populate all the fields including **address, card_holder_name and so on** in the `params`.
 
 Next we have to set up a callback page from twocheckout. Lets call that return. We will setup the return page.
 
