@@ -4,3 +4,5 @@ url: http://sajinmp.github.io
 highlighter: pygments
 permalink: /posts/:title
 markdown: kramdown
+gems:
+  - jekyll-sitemap
