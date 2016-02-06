@@ -1,6 +1,6 @@
 name: Sajin M Prasad
 description: ''
 url: http://sajinmp.in
-highlighter: pygments
+highlighter: rouge
 permalink: /posts/:title
 markdown: kramdown
