@@ -4,6 +4,3 @@ url: http://sajinmp.in
 highlighter: pygments
 permalink: /posts/:title
 markdown: kramdown
-
-gems:
-  - jekyll-sitemap
