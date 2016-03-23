@@ -4,7 +4,7 @@ title: Sajin M Prasad
 description: "Sajin's blog"
 url: "http://sajinmp.github.io" # the base hostname & protocol for your site
 permalink: /posts/:title
-highlighter: pygments
+highlighter: rouge
 incremental: true
 
 # Build settings
