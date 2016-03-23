@@ -39,7 +39,7 @@ module Jekyll
     end
 
     def process_posts
-      @site.posts.docs.each do |post|
+      @site.posts.each do |post|
         generate_aliases(post.url, post.data['alias'])
       end
     end

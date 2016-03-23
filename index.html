@@ -1,23 +1,21 @@
 ---
 layout: default
-title: Sajin M Prasad
 ---
 
-<div class='posts'>
-  {% for post in site.posts %}
-    {% unless post.next %}
-      <h3 class='year'>{{ post.date | date: '%Y' }}</h3>
-    {% else %}
-      {% capture year  %}{{ post.date | date: '%Y' }}{% endcapture %}
-      {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-      {% if year != nyear %}
-        <h3 class='year'>{{ post.date | date: '%Y' }}</h3>
-      {% endif %}
+<div class="home">
 
-    {% endunless %}
-    <a href='{{ post.url }}'>
-      <span class='title'>{{ post.title }}</span>
-      <span class='published-on'>{{ post.date | date_to_string }}</span>
-    </a>
-  {% endfor %}
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
 </div>
