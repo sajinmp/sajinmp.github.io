@@ -2,10 +2,14 @@
 
 title: Sajin M Prasad
 description: "Sajin's blog"
-url: "http://sajinmp.github.io" # the base hostname & protocol for your site
+url: "http://sajinmp.in" # the base hostname & protocol for your site
 permalink: /posts/:title
 highlighter: rouge
 incremental: true
 
 # Build settings
 markdown: kramdown
+sitemap:
+  exclude:
+    - "/css/main.css"
+    - "/feed.xml"
