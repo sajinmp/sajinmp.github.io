@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Deployment of Rails app to AWS with Capistrano Puma and Nginx'
+title: 'Deployment of Rails app to AWS or Digital Ocean with Capistrano Puma and Nginx'
 date:   2016-03-23 18:38:53 +0530
 ---
 I tried deployment for the first time. Everyone told that it was a difficult thing to do. So I was actually afraid. I read through a tutorial and tried to do it. But there were some problems in the tutorial which I had to fix after trying many things. So I will explain step by step, the things to do while deploying to **aws** using **capistrano, puma & nginx**.
@@ -17,7 +17,7 @@ First we are gonna add few gems to our application.
   group :development do
     gem 'capistrano'
     gem 'capistrano-rails'
-    gem 'capistrano-puma', require: false
+    gem 'capistrano3-puma', require: false # capistrano-puma for older apps
     gem 'capistrano-bundler', require: false
     gem 'capistrano-rvm'    # comment if you are not using rvm. since I use rvm
     # gem 'capistrano-rbenv'  # uncomment if you are using rbenv
@@ -52,7 +52,7 @@ Next we edit **deploy.rb** file in the **config** directory.
   set :deploy_to, '/home/deploy/appname'
   set :pty, true
   set :linked_files, %w{config/database.yml config/application.yml}  # application.yml for figaro
-  set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
+  set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
   set :keep_releases, 3   # default value is 5, Edit as per necessary
   
   set :puma_rackup, -> { File.join(current_path, 'config.ru') }
@@ -79,7 +79,8 @@ Now the basic setup is complete. We have to get the server up and running. Selec
 
 We are gonna ssh into the server now.
 
-    ]$ ssh -i path_to_pem_file ubuntu@public_ip
+    ]$ ssh -i path_to_pem_file ubuntu@public_ip # if aws
+    ]$ ssh root@ip # if digital ocean
 
 First update the existing packages.
 
@@ -117,7 +118,7 @@ Delete all the existing content and enter the following
 > /etc/nginx/sites-available/default
 > {% highlight bash %}
   upstream app {
-    server unix:/home/deploy/appname/shared/tmp/sockets/puma.sock fail_timeout=0;
+    server unix:/home/deploy/app_name/shared/tmp/sockets/puma.sock fail_timeout=0;
     # no space between unix: and /home
   }
   
@@ -234,4 +235,4 @@ That is the entire setup necessary. Now when you restart nginx if it fails you c
 
 And then search google to find the solution. :D
 
-Go to **http://your_aws_public_ip** to view the site.
+Go to **http://your_ip** to view the site.
