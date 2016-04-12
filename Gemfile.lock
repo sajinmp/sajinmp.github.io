@@ -133,6 +133,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  jekyll-sitemap
   pygments.rb
 
 BUNDLED WITH
