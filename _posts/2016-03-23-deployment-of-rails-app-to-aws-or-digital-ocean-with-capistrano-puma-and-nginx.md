@@ -3,7 +3,7 @@ layout: post
 title: 'Deployment of Rails app to AWS or Digital Ocean with Capistrano Puma and Nginx'
 date:   2016-03-23 18:38:53 +0530
 ---
-I tried deployment for the first time. Everyone told that it was a difficult thing to do. So I was actually afraid. I read through a tutorial and tried to do it. But there were some problems in the tutorial which I had to fix after trying many things. So I will explain step by step, the things to do while deploying to **aws** using **capistrano, puma & nginx**.
+I tried deployment for the first time. Everyone told that it was a difficult thing to do. So I was actually afraid. I read through a tutorial and tried to do it. But there were some problems in the tutorial which I had to fix after trying many things. So I will explain step by step, the things to do while deploying to **aws** or **digital ocean** using **capistrano, puma & nginx**.
 
 I believe you have a running rails application since I am not going to explain it from the absolute begining. I use **figaro** gem here to manage passwords, secrets and so on but you are free to use **secrets.yml** if thats what you are comfortable with. But it will need other tweaks and I am not going to explain it here. 
 
@@ -75,7 +75,9 @@ I hope that you have not added **database.yml & application.yml** in your git tr
 
 ## Setting up the server
 
-Now the basic setup is complete. We have to get the server up and running. Select and launch an EC2 instance (I chose Ubuntu 14.04). It will ask you for all kinds of info. You have to generate a key-value pair to connect to EC2 and download the file. You can get the public ip of EC2 instance by clicking on the instance and viewing its details at the bottom.
+Now the basic setup is complete. We have to get the server up and running. If you are using AWS select and launch an EC2 instance (I chose Ubuntu 14.04). It will ask you for all kinds of info. You have to generate a key-value pair to connect to EC2 and download the file. You can get the public ip of EC2 instance by clicking on the instance and viewing its details at the bottom.
+
+If you are using **digital ocean** fire up a droplet and you will get the details of the root user in your mail.
 
 We are gonna ssh into the server now.
 
@@ -111,7 +113,7 @@ Now we are gonna install nginx.
 
 Now we are going to edit nginx site-config file
 
-    ]$ sudo vim /etc/nginx/sites-available/default
+    ]$ sudo vim /etc/nginx/sites-enabled/default
 
 Delete all the existing content and enter the following
 
