@@ -12,16 +12,23 @@ Lets setup a sample application to do this.
 This will create a new application. Lets setup dynamic select boxes for categories and subcategories. I have to setup an Article model which belongs to a category and subcategory. So we'll have 3 models - Article, Category and Subcategory.
 
     dynamic_boxes]$ rails g model Category name
-    dynamic_boxes]$ rails g model Subcategory name
+    dynamic_boxes]$ rails g model Subcategory name category_id:integer
     dynamic_boxes]$ rails g scaffold Article name content:text category_id:integer subcategory_id:integer
     
-### app/model/category.rb
+### app/models/category.rb
 
     has_many :subcategories
+    has_many :articles
     
-### app/model/subcategory.rb
+### app/models/subcategory.rb
 
     belongs_to :category
+    has_many :articles
+
+### app/models/article.rb
+
+    belongs_to :category
+    belongs_to :subcategory
 
 These will create the models and the controller and views for article. Now we go to the articles view `_form.html.erb`
 
