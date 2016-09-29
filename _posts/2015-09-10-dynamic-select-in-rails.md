@@ -68,4 +68,4 @@ Now seed some data. Then in the new articles page we can find that the dropdown 
 
 And thats it. Now if you try to select a category, the subcategories will get filtered automatically.
 
-
+You can check the sample [here](https://github.com/sajinmp/sample-dynamic-select).
