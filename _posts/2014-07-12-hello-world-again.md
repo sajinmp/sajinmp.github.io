@@ -2,6 +2,7 @@
 layout: post
 title: "Hello world"
 date: 2014-07-12 18:38:00
+keywords: "Sajin, Prasad, Sajin M Prasad, Sajin's blog"
 ---
 
 This is my first post after moving to jekyll and github pages. I have been using wordpress but I was always distant from it. Then when I looked at github pages and learned that I could use Jekyll, well, there was no more second thoughts.

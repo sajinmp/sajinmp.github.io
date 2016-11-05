@@ -2,6 +2,8 @@
 layout: post
 title: 'Dynamic Select in Rails'
 date: 2015-09-10 16:45:52
+keywords: 'dynamic select, select tag, rails, dynamic select in rails, dependent select tag rails'
+description: 'I was trying to setup dynamic select boxes in rails. At the begining I tried to use `collection_select` form helper to setup both the select boxes. I was planning to do the filtering using JS.'
 ---
 Last week I was trying to setup dynamic select boxes in rails. At the begining I tried to use `collection_select` form helper to setup both the select boxes. I was planning to do the filtering using JS. But I was unsuccessful in that. Then while I went through the rails API, I read about `grouped_collection_select` which can filter the data automatically if the relation is defined. So i wanted to use that. 
 

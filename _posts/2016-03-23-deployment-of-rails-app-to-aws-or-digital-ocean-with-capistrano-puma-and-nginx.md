@@ -2,6 +2,8 @@
 layout: post
 title: 'Deployment of Rails app to AWS or Digital Ocean with Capistrano Puma and Nginx'
 date:   2016-03-23 18:38:53 +0530
+keywords: 'rails, deployment, aws, digital ocean, capistrano, puma, nginx, rails deployment to aws with capistrano'
+description: "I believe you have a running rails application since I am not going to explain it from the absolute begining. I use figaro gem here to manage passwords, secrets"
 ---
 I tried deployment for the first time. Everyone told that it was a difficult thing to do. So I was actually afraid. I read through a tutorial and tried to do it. But there were some problems in the tutorial which I had to fix after trying many things. So I will explain step by step, the things to do while deploying to **aws** or **digital ocean** using **capistrano, puma & nginx**.
 

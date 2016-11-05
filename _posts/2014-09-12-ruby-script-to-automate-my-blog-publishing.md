@@ -2,6 +2,8 @@
 layout: post
 title: 'Ruby script to automate my blog publishing'
 date: 2014-09-12 23:31:47
+keywords: 'automating, jekyll, github pages, publishing to github pages'
+description: "I just wrote a ruby script to automate the publishing to my blog. Since the naming of posts is in a certain case, it was giving me a headache to manually type the filename. This made me think of writing a script to automate the filenaming process."
 ---
 Hi there. I just wrote a ruby script to automate the publishing to my blog. Since the naming of posts is in a certain case, it was giving me a headache to manually type the filename. This made me think of writing a script to automate the filenaming process. Then I thought that if I could name the files then why not do the entire job of publishing in this single script.
 

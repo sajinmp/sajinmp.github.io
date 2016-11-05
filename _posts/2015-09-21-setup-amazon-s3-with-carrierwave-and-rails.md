@@ -2,6 +2,8 @@
 layout: post
 title: 'Setup Amazon S3 with Carrierwave and Rails'
 date: 2015-09-21 19:12:27
+keywords: 'rails, amazon s3, aws, s3, carrierwave, s3 with carrierwave, setup s3 with rails'
+description: 'I had to setup an Amazon S3 bucket to move all the uploaded files to cloud. It was an urgent task because'
 ---
 Yesterday I had to setup an **Amazon S3 bucket** to move all the uploaded files to cloud. It was an urgent task because we lost our data once due to our server crashing. It is a pretty easy task but I got stuck somewhere due to my foolishness. So if there are some other fools out there like me, this post is mainly for them as well as all the people who are setting up S3 for the first time.
 

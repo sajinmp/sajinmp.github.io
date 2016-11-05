@@ -1,7 +1,9 @@
 ---
 layout: post
-title: 'Recurse over a directory & Convert file encoding'
+title: 'Recurse over a directory &amp; Convert file encoding'
 date: 2016-03-15 16:35:48
+keywords: 'linux, ruby, recurse over directory, listing files, convert encoding'
+description: "I had to do some task across all files in a directory. The directory had subdirectories which in turn had subdirectories again. Although I know that there was a Dir module in ruby"
 ---
 Yesterday I had to do some task across all files in a directory. The directory had subdirectories which in turn had subdirectories again. Although I know that there was a `Dir` module in ruby, I didn't know that it would have the function necessary. But when I googled I found a method named `glob` in the `Dir` module. So I am just writing this post to show how it works.
 

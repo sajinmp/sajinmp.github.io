@@ -2,6 +2,8 @@
 layout: post
 title: 'Angel hack 2015 - An awesome experience'
 date: 2015-06-09 23:33:46
+keywords: 'hackathon, angelhack, kochi hackathon, angelhack cochin, startup village'
+description: 'I went to the startup village to participate in the hackathon - Angel hack 2015. I was alone but with luck I found one of my aquaintances over there who was also alone.'
 ---
 I went to the startup village to participate in the hackathon - Angel hack 2015. I was alone but with luck I found one of my aquaintances over there who was also alone. So we got together as a team and began developing. We had to develop an application in one day which solved a real life problem. 
 This was my very first hackathon. So I do not know what to do or how to do anything. We spent half the day thinking of what to do. Finally what was thought up was to build an android application which can access the camera to take an image and from that image we find faces. After the face is found we check whether the person is present in the contacts. After 10 mins of discussing this plan we understood that a single day won't suffice in comppleting this particular project. 

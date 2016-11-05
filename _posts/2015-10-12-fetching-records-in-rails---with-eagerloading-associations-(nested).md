@@ -2,6 +2,8 @@
 layout: post
 title: 'Fetching Records in Rails - With Eagerloading Associations (Nested)'
 date: 2015-10-12 16:41:04
+keywords: 'rails, eagerloading associations, fetching associated records in rails, fetching records'
+description: "I had to fetch records after eagerloading associations. Mine was a triple nested resource. I went through the rails guides and apis"
 ---
 Earlier today I had to fetch records after eagerloading associations. Mine was a triple nested resource. I went through the rails guides and apis but couldn't find anything other than eagerloading them. I couldn't find any way to give them conditions. After lots of trials and errors I got an answer.
 

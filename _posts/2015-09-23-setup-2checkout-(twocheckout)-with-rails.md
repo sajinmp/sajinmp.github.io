@@ -2,6 +2,8 @@
 layout: post
 title: 'Setup 2Checkout (TwoCheckout) with Rails'
 date: 2015-09-23 21:12:40
+keywords: 'rails, 2checkout, twocheckout, twocheckout with rails, 2checkout with rails'
+description: "This post explains the steps needed to setup 'TwoCheckout' payment gateway with rails. Its pretty easy since there is a gem made to integrate"
 ---
 This post explains the steps needed to setup 'TwoCheckout' payment gateway with rails. Its pretty easy since there is a gem made to integrate **twocheckout** into rails. I am writing this post to make it easier for those who want to integrate them. I met with some problems when I tried to integrate it with my rails app.
 

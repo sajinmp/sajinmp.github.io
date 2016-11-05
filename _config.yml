@@ -1,7 +1,9 @@
 # Site settings
 
 title: Sajin M Prasad
-description: "Sajin's blog"
+description: "Sajin M Prasad (sajinmp) is a web developer who primarily 
+              scripts on Ruby and uses Rails. Sajin is also an avid technology 
+              freak and is almost goofy all the time."
 url: "http://sajinmp.in" # the base hostname & protocol for your site
 permalink: /posts/:title
 highlighter: rouge
@@ -9,6 +11,8 @@ incremental: true
 
 # Build settings
 markdown: kramdown
+gems:
+  - jekyll-sitemap
 sitemap:
   exclude:
     - "/css/main.css"

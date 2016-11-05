@@ -2,6 +2,8 @@
 layout: post
 title: 'Integrating Paypal with Active Merchant'
 date: 2016-04-13 03:10:23 +0530
+keywords: 'rails, activemerchant, paypal, integrating payment gateway, add paypal to rails, paypal in activemerchant'
+description: "I did a project where I had to integrate 2 payment systems (Paypal and PayU) in a rails app. I read through gems and APIs for both and it seemed"
 ---
 I did a project where I had to integrate 2 payment systems (Paypal and PayU) in a rails app. I read through gems and APIs for both and it seemed easy. It was later that I heard of **Active Merchant** which has almost all payment gateways available. I searched google on ways to integrate it and there was no tutorial or posts at all which helped me to do this. There was an old rails casts episode which did this but it used `rails 2`. 
 
