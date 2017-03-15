@@ -21,8 +21,7 @@ First we are gonna add few gems to our application.
     gem 'capistrano-rails'
     gem 'capistrano3-puma', require: false # capistrano-puma for older apps
     gem 'capistrano-bundler', require: false
-    gem 'capistrano-rvm'    # comment if you are not using rvm. since I use rvm
-    # gem 'capistrano-rbenv'  # uncomment if you are using rbenv
+    gem 'capistrano-rvm' 
   end
   {% endhighlight %}
 
@@ -103,9 +102,6 @@ Now add deploy to sudoers. Run `sudo visudo` and add the following line below `r
 Now go to user deploy and install git. Then create an ssh key.
 
     ]$ sudo apt-get install git
-    ]$ ssh-keygen
-
-Copy the contents of `.ssh/id_rsa.pub` and add it to the git repository.
 
 Get the public key from your local system (`.ssh/id_rsa.pub`) and add it to the server's **authorized ssh keys** present at `.ssh/authorized_keys`.
 

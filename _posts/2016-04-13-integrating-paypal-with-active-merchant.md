@@ -37,7 +37,7 @@ I used `figaro` gem to set the environment variables. I am fetching the details 
   def create
     @order = Order.new(order_params)
     if @order.save
-      checkout_paypal(@order)
+      checkout_paypal
     else
       render 'new'
     end
@@ -62,13 +62,13 @@ I used `figaro` gem to set the environment variables. I am fetching the details 
   private
     def checkout_paypal
       paypal_response = ::GATEWAY.setup_purchase(
-        (order.amount * 100).round, # paypal amount is in cents
+        (@order.amount * 100).round, # paypal amount is in cents
         ip: request.remote_ip,
-        return_url: success_order_url(order), # return here if payment success
-        cancel_return_url: error_order_url(order) # return here if payment failed
+        return_url: success_order_url(@order), # return here if payment success
+        cancel_return_url: error_order_url(@order) # return here if payment failed
       )
-      order.paypal_token = paypal_response.token # save paypal token to db
-      order.save
+      @order.paypal_token = paypal_response.token # save paypal token to db
+      @order.save
       redirect_to ::GATEWAY.redirect_url_for(paypal_response.token) and return  # redirect to paypal for payment
     end
   {% endhighlight %}
