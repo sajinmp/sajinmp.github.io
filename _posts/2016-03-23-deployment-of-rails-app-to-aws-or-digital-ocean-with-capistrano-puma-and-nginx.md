@@ -46,14 +46,14 @@ Next we edit **deploy.rb** file in the **config** directory.
 
 > config/deploy.rb
 > {% highlight ruby %}
-  lock '3.4.0'
+  lock '3.4.0'  # Change version as per capistrano
   
-  set :application, 'appname'
-  set :repo_url, 'git@github.com:username/repository_name.git'
-  set :deploy_to, '/home/deploy/appname'
+  set :application, 'appname' # name of application folder in server
+  set :repo_url, 'git@github.com:username/repository_name.git' # link to repository
+  set :deploy_to, '/home/deploy/appname' # path to deploy in server
   set :pty, true
-  set :linked_files, %w{config/database.yml config/application.yml}  # application.yml for figaro
-  set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
+  set :linked_files, %w{config/database.yml config/application.yml}  # linking files from shared directory
+  set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads} # linking folders from shared directory
   set :keep_releases, 3   # default value is 5, Edit as per necessary
   
   set :puma_rackup, -> { File.join(current_path, 'config.ru') }
@@ -141,7 +141,7 @@ Delete all the existing content and enter the following
       proxy_pass http://app;
     }
   
-    location ~ ^/(assets|fonts|system)/|favicon.ico|robots.txt {
+    location ~ ^/(assets|fonts|system)/|favicon.ico|robots.txt { # add |uploads after system if you want upload directory to server static assets
       gzip_static on;
       expires max;
       add_header Cache-Control public;
@@ -180,6 +180,8 @@ Now we go on to install **rvm & ruby**.
     ]$ rvm install ruby_version       # eg: rvm install 2.2.2
     ]$ rvm use ruby_version
 
+Open your **.bash_profile** and copy last line to **.bash_rc** to enable rvm even in non-login shell.
+
 We installed rvm and ruby. We also specified the ruby we are going to use. Now we will install bundler.
 
     ]$ gem install bundler
@@ -197,9 +199,9 @@ We are only adding the production data to **database.yml**
   production:
     adapter: postgresql
     encoding: unicode
-    database: app_name_production
-    username: user_name
-    password: user_password
+    database: app_name_production  # your db name created after install postgresql
+    username: user_name  # your db username
+    password: user_password  # your db password
     host: localhost
     port: 5432
   {% endhighlight %}
@@ -215,7 +217,11 @@ You can generate a new secret by running `rake secret` from your local. Now the 
 
 > /home/user/app_name/config/deploy/production.rb
 > {% highlight ruby %}
-  `server 'your_aws_ec2_public_ip', user: 'deploy', roles: %w{web app db}`
+  server 'your_aws_ec2_public_ip', user: 'deploy', roles: %w{web app db}
+
+  set :branch, :staging  # set branch to something other than master from your version control
+
+  set :puma_env, 'staging'  # capistrano runs puma in production by default. set environment here.
   {% endhighlight %}
 
 Everything is done. To deploy with capistrano just run
