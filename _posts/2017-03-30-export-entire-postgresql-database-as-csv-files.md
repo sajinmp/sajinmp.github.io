@@ -23,7 +23,11 @@ From the result, you can find the **schema name**. After that you send the rest 
     done
   {% endhighlight %}
 
-There is only a slight difference between the script I got from stackoverflow. I just added **HEADER** to the script so that every csv file generated will have a header. Right now I am just writing it to home folder.
+There is only a slight difference between the script I got from stackoverflow. I just added **HEADER** to the script so that every csv file generated will have a header. To get the files run
+
+  ]$ sh script.sh
+
+All **csv** will be generated in the same directory as that of _script.sh_
 
 Once all the csv are generated, I can simply run an `scp` command to get all of them to my local system or better yet compress them from server and use scp.
 
