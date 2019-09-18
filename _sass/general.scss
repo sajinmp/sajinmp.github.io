@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,400,600,700,800');
+
+html, body {
+  margin: 0 0 20px 0;
+  padding: 0;
+  font-family: 'Montserrat', 'sans-serif';
+}
+
+// Forcing scrollbar to always be present
+html {
+  overflow: -moz-scrollbars-vertical;
+  overflow-y: scroll;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+}
+
+section.header {
+  nav.navbar {
+    padding: 15px 0;
+
+    .navbar-brand {
+      font-weight: 600;
+      color: #666;
+    }
+
+    .navbar-brand:hover {
+      color: #222;
+    }
+
+    .navbar-nav {
+      li.nav-item {
+        margin-left: 15px;
+      }
+    }
+  }
+}
+
+section.sidebar {
+  padding-top: 50px;
+
+  img {
+    width: 200px;
+  }
+
+  .other-bio {
+    margin-top: 15px;
+
+    span.icon {
+      margin-right: 15px;
+    }
+
+    a, a:hover, a:visited, a:active {
+      color: #000;
+    }
+  }
+}
+
+section.post-list {
+  margin-top: 50px;
+
+  li {
+    list-style-type: none;
+    margin-bottom: 30px;
+
+    div.title {
+      a, a:hover, a:visited, a:focus {
+        font-size: 30px;
+        text-decoration: none;
+        color: #555;
+        font-weight: 600;
+      }
+    }
+
+    div.published-time {
+      font-size: 13px;
+      color: #999;
+    }
+
+    p {
+      font-size: 15px;
+    }
+  }
+}
+
+section.post {
+  margin-top: 50px;
+
+  div.title {
+    font-size: 30px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+  }
+
+  div.published-time {
+    font-size: 13px;
+    color: #999;
+  }
+}
+
+section.page {
+  margin-top: 50px;
+
+  p {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+}

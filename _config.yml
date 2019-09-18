@@ -1,19 +1,31 @@
 # Site settings
-
-title: Sajin M Prasad
-description: "Sajin M Prasad (sajinmp) is a web developer who primarily 
-              scripts on Ruby and uses Rails. Sajin is also an avid technology 
-              freak and is almost goofy all the time."
-url: "http://sajinmp.in" # the base hostname & protocol for your site
-permalink: /posts/:title
-highlighter: rouge
-incremental: true
+name: 'Sajin M Prasad'
+title: 'The Path to the Peak'
+description: 'A technology blog with a tinge of life mixed within.'
+big_description: "A tech blog written by sajinmp (sajin m prasad). Ruby on rails, linux, blog, technology."
+baseurl: ""
+url: 'http://sajinmp.com'
+repo: 'https://github.com/sajinmp/sajinmp.github.io'
 
 # Build settings
 markdown: kramdown
-gems:
+highligher: rouge
+permalink: /posts/:categories/:title
+collections:
+  pages:
+    permalink: pretty
+    output: true
+plugins:
+  - jekyll-feed
   - jekyll-sitemap
-sitemap:
-  exclude:
-    - "/css/main.css"
-    - "/feed.xml"
+
+# Author
+author:
+  image: '/assets/images/sajinmp.jpg'
+  work: 'Software Developer'
+  company: 'TongueStun'
+  location: 'Bangalore, India'
+  email: 'sajinprasadkm@gmail.com'
+  github: 'https://github.com/sajinmp'
+  linkedin: 'https://linkedin.com/in/sajinmp'
+  stackoverflow: 'https://stackoverflow.com/users/1713555/sajinmp' 

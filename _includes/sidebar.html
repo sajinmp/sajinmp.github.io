@@ -1,0 +1,33 @@
+<section class="sidebar">
+  <div class="text-left">
+    <img src="/assets/images/sajinmp.jpg" class="rounded-circle" alt="SajinMP"/>
+  </div>
+  <div class="other-bio text-left">
+    <div class="txt">{{ site.author.work }} @ <br> {{ site.author.company }}</div>
+    <br>
+    <div class="row">
+      <div class="col-md-1">
+        <span class="icon"><i class="fa fa-map-marker"></i></span>
+        <br><br>
+        <span class="icon"><i class="fa fa-envelope"></i></span>
+        <br><br>
+        <span class="icon"><i class="fa fa-linkedin"></i></span>
+        <br><br>
+        <span class="icon"><i class="fa fa-github"></i></span>
+        <br><br>
+        <span class="icon"><i class="fa fa-stack-overflow"></i></span>
+      </div>
+      <div class="col-md-10">
+        {{ site.author.location }}
+        <br><br>
+        <a href="mailto:{{ site.author.email }}">Email</a>
+        <br><br>
+        <a target="_blank" href="{{ site.author.linkedin }}">LinkedIn</a>
+        <br><br>
+        <a target="_blank" href="{{ site.author.github }}">Github</a>
+        <br><br>
+        <a target="_blank" href="{{ site.author.stackoverflow }}">StackOverflow</a>        
+      </div>
+    </div>
+  </div>
+</section>

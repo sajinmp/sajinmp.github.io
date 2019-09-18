@@ -25,7 +25,7 @@ From the result, you can find the **schema name**. After that you send the rest 
 
 There is only a slight difference between the script I got from stackoverflow. I just added **HEADER** to the script so that every csv file generated will have a header. To get the files run
 
-  ]$ sh script.sh
+    ]$ sh script.sh
 
 All **csv** will be generated in the same directory as that of _script.sh_
 

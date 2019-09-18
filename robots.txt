@@ -1,4 +1,4 @@
 User-Agent: *
 Disallow: 
 
-Sitemap: http://sajinmp.in/sitemap.xml
+Sitemap: http://sajinmp.com/sitemap.xml

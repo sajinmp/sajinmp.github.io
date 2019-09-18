@@ -1,27 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
-  {% include head.html %}
-
+  <head>
+    {% include head.html %}
+    {% feed_meta %}
+  </head>
   <body>
 
+    <!-- header -->
     {% include header.html %}
 
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
+    <div class="container">
+      <div class="row">
+
+        <!-- Sidebar -->
+        <div class="sidebar-parent col-md-3 d-sm-none d-none d-md-block d-lg-block">
+          {% include sidebar.html %}
+          <br><br><br>
+          <p class="rss-subscribe">Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via Atom</a></p>
+        </div>
+
+        <!-- Content -->
+        <div class="col-md-9 col-sm-12 ml-auto">
+          {{ content }}
+        </div>
+
       </div>
     </div>
 
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		  ga('create', 'UA-53068461-1', 'auto');
-		  ga('send', 'pageview');
-		</script>
-
+    <!-- footer -->
+    {% include footer.html %}
   </body>
-
 </html>

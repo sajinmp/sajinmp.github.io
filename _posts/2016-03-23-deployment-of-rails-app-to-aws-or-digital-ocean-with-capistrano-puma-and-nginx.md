@@ -3,7 +3,6 @@ layout: post
 title: 'Deployment of Rails app to AWS or Digital Ocean with Capistrano Puma and Nginx'
 date:   2016-03-23 18:38:53 +0530
 keywords: 'rails, deployment, aws, digital ocean, capistrano, puma, nginx, rails deployment to aws with capistrano'
-description: "I believe you have a running rails application since I am not going to explain it from the absolute begining. I use figaro gem here to manage passwords, secrets"
 ---
 I tried deployment for the first time. Everyone told that it was a difficult thing to do. So I was actually afraid. I read through a tutorial and tried to do it. But there were some problems in the tutorial which I had to fix after trying many things. So I will explain step by step, the things to do while deploying to **aws** or **digital ocean** using **capistrano, puma & nginx**.
 
@@ -12,18 +11,18 @@ I believe you have a running rails application since I am not going to explain i
 
 First we are gonna add few gems to our application.
 
-> Gemfile
-> {% highlight ruby %}
-  gem 'figaro'
-  gem 'puma'
-  group :development do
-    gem 'capistrano'
-    gem 'capistrano-rails'
-    gem 'capistrano3-puma', require: false # capistrano-puma for older apps
-    gem 'capistrano-bundler', require: false
-    gem 'capistrano-rvm' 
-  end
-  {% endhighlight %}
+    Gemfile
+{% highlight ruby %}
+gem 'figaro'
+gem 'puma'
+group :development do
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano3-puma', require: false # capistrano-puma for older apps
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rvm' 
+end
+{% endhighlight %}
 
 Now bundle the gems by running `bundle install`.
 
@@ -33,44 +32,44 @@ We are now gonna start setting up capistrano. Run the command
 
 This will create few files. We will edit them in the process. First edit the **Capfile** in the root of your application
 
-> Capfile
-> {% highlight ruby %}
-  require 'capistrano/bundler'
-  require 'capistrano/rvm'
-  require 'capistrano/rails/assets'
-  require 'capistrano/rails/migrations'
-  require 'capistrano/puma'
-  {% endhighlight %}
+    Capfile
+{% highlight ruby %}
+require 'capistrano/bundler'
+require 'capistrano/rvm'
+require 'capistrano/rails/assets'
+require 'capistrano/rails/migrations'
+require 'capistrano/puma'
+{% endhighlight %}
 
 Next we edit **deploy.rb** file in the **config** directory.
 
-> config/deploy.rb
-> {% highlight ruby %}
-  lock '3.4.0'  # Change version as per capistrano
-  
-  set :application, 'appname' # name of application folder in server
-  set :repo_url, 'git@github.com:username/repository_name.git' # link to repository
-  set :deploy_to, '/home/deploy/appname' # path to deploy in server
-  set :pty, true
-  set :linked_files, %w{config/database.yml config/application.yml}  # linking files from shared directory
-  set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads} # linking folders from shared directory
-  set :keep_releases, 3   # default value is 5, Edit as per necessary
-  
-  set :puma_rackup, -> { File.join(current_path, 'config.ru') }
-  set :puma_state, "#{shared_path}/tmp/pids/puma.state"
-  set :puma_pid, "#{shared_path}/tmp/pids/puma.pid"
-  set :puma_bind, "unix://#{shared_path}/tmp/sockets/puma.sock"    #accept array for multi-bind
-  set :puma_conf, "#{shared_path}/puma.rb"
-  set :puma_access_log, "#{shared_path}/log/puma_error.log"
-  set :puma_error_log, "#{shared_path}/log/puma_access.log"
-  set :puma_role, :app
-  set :puma_env, fetch(:rack_env, fetch(:rails_env, 'production'))
-  set :puma_threads, [0, 8]
-  set :puma_workers, 0
-  set :puma_worker_timeout, nil
-  set :puma_init_active_record, true
-  set :puma_preload_app, false
-  {% endhighlight %}
+    config/deploy.rb
+{% highlight ruby %}
+lock '3.4.0'  # Change version as per capistrano
+
+set :application, 'appname' # name of application folder in server
+set :repo_url, 'git@github.com:username/repository_name.git' # link to repository
+set :deploy_to, '/home/deploy/appname' # path to deploy in server
+set :pty, true
+set :linked_files, %w{config/database.yml config/application.yml}  # linking files from shared directory
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads} # linking folders from shared directory
+set :keep_releases, 3   # default value is 5, Edit as per necessary
+
+set :puma_rackup, -> { File.join(current_path, 'config.ru') }
+set :puma_state, "#{shared_path}/tmp/pids/puma.state"
+set :puma_pid, "#{shared_path}/tmp/pids/puma.pid"
+set :puma_bind, "unix://#{shared_path}/tmp/sockets/puma.sock"    #accept array for multi-bind
+set :puma_conf, "#{shared_path}/puma.rb"
+set :puma_access_log, "#{shared_path}/log/puma_error.log"
+set :puma_error_log, "#{shared_path}/log/puma_access.log"
+set :puma_role, :app
+set :puma_env, fetch(:rack_env, fetch(:rails_env, 'production'))
+set :puma_threads, [0, 8]
+set :puma_workers, 0
+set :puma_worker_timeout, nil
+set :puma_init_active_record, true
+set :puma_preload_app, false
+{% endhighlight %}
 
 I hope that you have not added **database.yml & application.yml** in your git tracking.
 
@@ -115,43 +114,43 @@ Now we are going to edit nginx site-config file
 
 Delete all the existing content and enter the following
 
-> /etc/nginx/sites-available/default
-> {% highlight bash %}
-  upstream app {
-    server unix:/home/deploy/app_name/shared/tmp/sockets/puma.sock fail_timeout=0;
-    # no space between unix: and /home
+    /etc/nginx/sites-available/default
+{% highlight bash %}
+upstream app {
+  server unix:/home/deploy/app_name/shared/tmp/sockets/puma.sock fail_timeout=0;
+  # no space between unix: and /home
+}
+
+server {
+  listen 80;
+  server_name localhost;
+
+  root /home/deploy/app_name/current/public;
+
+  try_files $uri/index.html $uri @app;
+
+  location / {
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header Host $host;
+    proxy_redirect off;
+    proxy_http_version 1.1;
+    proxy_set_header Connection '';
+    proxy_pass http://app;
   }
-  
-  server {
-    listen 80;
-    server_name localhost;
-  
-    root /home/deploy/app_name/current/public;
-  
-    try_files $uri/index.html $uri @app;
-  
-    location / {
-      proxy_set_header X-Forwarded-Proto $scheme;
-      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-      proxy_set_header X-Real-IP $remote_addr;
-      proxy_set_header Host $host;
-      proxy_redirect off;
-      proxy_http_version 1.1;
-      proxy_set_header Connection '';
-      proxy_pass http://app;
-    }
-  
-    location ~ ^/(assets|fonts|system)/|favicon.ico|robots.txt { # add |uploads after system if you want upload directory to server static assets
-      gzip_static on;
-      expires max;
-      add_header Cache-Control public;
-    }
-  
-    error_page 500 502 503 504 /500.html;
-    client_max_body_size 4G;
-    keepalive_timeout 10;
+
+  location ~ ^/(assets|fonts|system)/|favicon.ico|robots.txt { # add |uploads after system if you want upload directory to server static assets
+    gzip_static on;
+    expires max;
+    add_header Cache-Control public;
   }
-  {% endhighlight %}
+
+  error_page 500 502 503 504 /500.html;
+  client_max_body_size 4G;
+  keepalive_timeout 10;
+}
+{% endhighlight %}
 
 The configuration of nginx is done. Now we go to the rest of the app.
 
@@ -194,35 +193,35 @@ Now we will create the files necessary for **capistrano** for deployment.
 
 We are only adding the production data to **database.yml**
 
-> /home/deploy/app_name/shared/config/database.yml
-> {% highlight yaml %}
-  production:
-    adapter: postgresql
-    encoding: unicode
-    database: app_name_production  # your db name created after install postgresql
-    username: user_name  # your db username
-    password: user_password  # your db password
-    host: localhost
-    port: 5432
-  {% endhighlight %}
+    /home/deploy/app_name/shared/config/database.yml
+{% highlight yaml %}
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: app_name_production  # your db name created after install postgresql
+  username: user_name  # your db username
+  password: user_password  # your db password
+  host: localhost
+  port: 5432
+{% endhighlight %}
 
 Then create **application.yml** and add the following
 
-> /home/deploy/app_name/shared/config/application.yml
-> {% highlight ruby %}
-  `SECRET_KEY_BASE: "8a2ff74119cb2b8f14a85dd6e213fa24d8540fc34dcaa7ef8a35c246ae452bfa8702767d19086461ac911e1435481c22663fbd65c97f21f6a91b3fce7687ce63"`
-  {% endhighlight %}
+    /home/deploy/app_name/shared/config/application.yml
+{% highlight ruby %}
+`SECRET_KEY_BASE: "8a2ff74119cb2b8f14a85dd6e213fa24d8540fc34dcaa7ef8a35c246ae452bfa8702767d19086461ac911e1435481c22663fbd65c97f21f6a91b3fce7687ce63"`
+{% endhighlight %}
 
 You can generate a new secret by running `rake secret` from your local. Now the server is done. We move to the local and edit **production.rb**.
 
-> /home/user/app_name/config/deploy/production.rb
-> {% highlight ruby %}
-  server 'your_aws_ec2_public_ip', user: 'deploy', roles: %w{web app db}
+    /home/user/app_name/config/deploy/production.rb
+{% highlight ruby %}
+server 'your_aws_ec2_public_ip', user: 'deploy', roles: %w{web app db}
 
-  set :branch, :staging  # set branch to something other than master from your version control
+set :branch, :staging  # set branch to something other than master from your version control
 
-  set :puma_env, 'staging'  # capistrano runs puma in production by default. set environment here.
-  {% endhighlight %}
+set :puma_env, 'staging'  # capistrano runs puma in production by default. set environment here.
+{% endhighlight %}
 
 Everything is done. To deploy with capistrano just run
 

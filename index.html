@@ -1,22 +1,18 @@
 ---
 layout: default
-keywords: Sajin, Prasad, Sajin M Prasad, sajinmp, web developer, rails developer, rails blog
 ---
 
-<div class="home">
-
-  <ul class="post-list">
+<section class="post-list">
+  <ul>
     {% for post in site.posts %}
       <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
+        <div class="title">
+          <a class="url" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </div>
+        <div class="published-time">{{ post.date | date: '%d %b %Y, %I:%M %P' }}</div>
+        <br>
+        <p class="text-justify">{{ post.content | strip_html | truncatewords: 50, '...' }}</p>
       </li>
     {% endfor %}
   </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+</section>
