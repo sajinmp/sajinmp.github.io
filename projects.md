@@ -14,7 +14,7 @@ permalink: /projects/
 5. e2z chef - https://play.google.com/store/apps/details?id=com.tonguestun.vendorapp
 6. woovly - woovly.com
 7. Realiz3d - realiz3d.in
-8. Dooble - Earn talktime - https://play.google.com/store/apps/details?id=com.androidapp.dooble
+8. Dooble - Earn talktime - https://play.google.com/store/apps/details?id=com.androidapp.dooble - 20k downloads in 2 weeks
 9. Symetric systems - http://symetricsystems.com
 10. Hopwit me - https://hopwit.me
 11. Talocity - https://talocity.in

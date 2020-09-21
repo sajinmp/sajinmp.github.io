@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'My new ruby gem "vimeo_upload"'
+title: 'My new ruby gem for uploading video to vimeo'
 date: 2016-11-02 14:18:47 +0530
 keywords: 'ruby, gem, rails, vimeo, video upload, vimeo video upload, vimeo_upload'
 ---
