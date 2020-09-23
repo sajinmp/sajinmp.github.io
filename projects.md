@@ -37,14 +37,16 @@ permalink: /projects/
 
 
 #### Hobby
+27. Gooday - Spread a smile campaign - http://britannia.herokuapp.com
+
+#### Open Source
 25. Spotlight search gem - https://github.com/commutatus/spotlight-search
 26. Vimeo upload gem - https://rubygems.org/gems/vimeo_upload
-27. Gooday - Spread a smile campaign - http://britannia.herokuapp.com
 
 
 
 # Talks
 
 1. Why side projects fail? - Commutatus - June 2019
-2. Why side projects fail? - Commutatus - May 2016
+2. Why side projects fail? - Foofys Solutions - May 2016
 3. Git version control system - Palakkad Institute of Science and Technology - August 2014
