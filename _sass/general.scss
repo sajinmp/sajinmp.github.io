@@ -48,6 +48,10 @@ section.sidebar {
   .other-bio {
     margin-top: 15px;
 
+    div:first-child {
+      display: inline-block;
+    }
+
     span.icon {
       margin-right: 15px;
     }
@@ -107,5 +111,16 @@ section.page {
   p {
     font-size: 18px;
     margin-bottom: 25px;
+  }
+
+  .projects {
+
+    h4 {
+      margin: 20px 0;
+    }
+
+    ul > li > ul > li {
+      margin-bottom: 10px;
+    }
   }
 }

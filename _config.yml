@@ -1,10 +1,10 @@
 # Site settings
 name: 'Sajin M Prasad'
-title: 'The Path to the Peak'
+title: 'The Learning Path'
 description: 'A technology blog with a tinge of life mixed within.'
 big_description: "A tech blog written by sajinmp (sajin m prasad). Ruby on rails, linux, blog, technology."
 baseurl: ""
-url: 'http://sajinmp.com'
+url: 'https://sajinmp.com'
 repo: 'https://github.com/sajinmp/sajinmp.github.io'
 
 # Build settings
@@ -22,8 +22,8 @@ plugins:
 # Author
 author:
   image: '/assets/images/sajinmp.jpg'
-  work: 'Software Developer'
-  company: 'TongueStun'
+  work: 'Backend & Site Reliability'
+  company: 'The Mobility Methods LLC'
   location: 'Bangalore, India'
   email: 'sajinprasadkm@gmail.com'
   github: 'https://github.com/sajinmp'

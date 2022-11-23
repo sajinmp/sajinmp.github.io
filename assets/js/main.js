@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  var sidebarWidth = $('.sidebar-parent').width();
+  $('.sidebar-parent').width(sidebarWidth);
   function setSidebar() {
     if ($(window).scrollTop() > 70) {
       $('.sidebar-parent').addClass('fixed');
