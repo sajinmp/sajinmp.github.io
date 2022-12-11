@@ -1,8 +1,8 @@
 # Site settings
 name: 'Sajin M Prasad'
-title: 'The Learning Path'
-description: 'A technology blog with a tinge of life mixed within.'
-big_description: "A tech blog written by sajinmp (sajin m prasad). Ruby on rails, linux, blog, technology."
+title: 'The Unknown Journey'
+description: 'I write about some technology and code here. There are some occasional ramblings as well.'
+big_description: "Sajin's blog. Ruby on rails, linux, blog, technology."
 baseurl: ""
 url: 'https://sajinmp.com'
 repo: 'https://github.com/sajinmp/sajinmp.github.io'
@@ -21,7 +21,7 @@ plugins:
 
 # Author
 author:
-  image: '/assets/images/sajinmp.jpg'
+  image: '/assets/images/sajinmp.jpeg'
   work: 'Backend & Site Reliability'
   company: 'The Mobility Methods LLC'
   location: 'Bangalore, India'
