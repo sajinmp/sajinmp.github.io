@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Rails - Automate deployment to AWS EC2 without using Image Builder or Instance Refresh
+title: Rails - Automate deployment to AWS EC2 and update image with just bash
 date: 2022-12-11 20:46:12 +0530
 ---
 
