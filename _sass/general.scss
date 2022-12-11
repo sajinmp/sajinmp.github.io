@@ -43,6 +43,9 @@ section.sidebar {
 
   img {
     width: 200px;
+    object-fit: cover;
+    object-position: bottom;
+    height: 200px;
   }
 
   .other-bio {

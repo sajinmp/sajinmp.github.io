@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Find and replace file content using Vim's Regex Engine
-date: 2022-09-23 07:13:12 +0530
+date: 2022-11-23 07:13:12 +0530
 ---
 
 I wanted to try out vim's regex for some time since it would probably boost my speed and efficiency. A chance came when I had to replace urls in a markdown to the standard structure. This post is an overall summary of the learnings based on my understanding (Just finished and it seems pretty long :D). Please correct me if I am wrong.
