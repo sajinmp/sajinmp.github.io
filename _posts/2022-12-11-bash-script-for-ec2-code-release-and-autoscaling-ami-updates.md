@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Rails - Automate deployment to AWS EC2 and update image with just bash
+title: Bash script for EC2 code release and Autoscaling ami updates
 date: 2022-12-11 20:46:12 +0530
 ---
 
@@ -12,4 +12,4 @@ The script can be found [here](https://github.com/sajinmp/rails-capistrano-aws-d
 
 > The script contains a bit of code to identify an older ami-image and removing it. I only keep 2 ami-images, so it suits my purpose.
 
-Let me know if any improvements can be made.
+Let me know if there are any corrections to be made.
