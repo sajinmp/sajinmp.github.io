@@ -8,6 +8,8 @@ permalink: /projects/
 
 # Projects
 
+<!---
+
 #### Work
 * [AIESEC](https://aiesec.org)
     * AIESEC is a global platform for young people to develop their leadership potential through practical experiences of many kinds.
@@ -55,6 +57,8 @@ permalink: /projects/
     * Fillam is a movie and book review portal.
 * [CourseMantra](https://coursemantra.com)
     * CourseMantra is online education marketplace and test preparation platform.
+
+-->
 
 #### Open Source
 
